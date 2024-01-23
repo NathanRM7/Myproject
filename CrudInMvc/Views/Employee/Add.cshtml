@@ -1,0 +1,56 @@
+﻿@model List<CrudInMvc.Models.EmployeeController>
+
+
+
+<style>
+    table, th, td {
+        border: 1px solid;
+        text-align:center;
+      
+    }
+</style>
+
+
+<table style="border:dashed,solid,black">
+    <tr>
+    <th>
+      Id
+    </th>
+    <th>
+     organaisation_id
+
+    </th>
+   
+    <th>
+            member_id
+    </th>
+        <th>
+            device_id
+        </th>
+        <th>
+            is_active
+        </th>
+        <th>
+            created_date
+        </th>
+    </tr>
+
+   @foreach (var emp in Model){
+
+        
+        <tr>
+       
+                <td>@emp.Id</td>
+                <td>@emp.organaisation_id</td>
+                <td>@emp.member_id</td>
+                <td>@emp.device_id</td>
+                <td>@emp.is_active</td>
+                <td>@emp.created_date</td>
+        
+            
+        </tr>
+   }
+    
+    
+</table>
+
