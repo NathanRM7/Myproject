@@ -1,0 +1,55 @@
+﻿@model  List<CrudInMvc.Models.ErrorLog>
+<style>
+    table, th, td {
+        border: 1px solid;
+        text-align: center;
+    }
+</style>
+
+
+<table style="border:dashed,solid,black">
+    <tr>
+        <th>
+            Id
+        </th>
+        <th>
+            App_module
+
+        </th>
+
+        <th>
+            error_message
+        </th>
+        <th>
+            created_date
+        </th>
+        <th>
+            payload_files
+        </th>
+        <th>
+            created_date
+        </th>
+
+    </tr>
+
+    @foreach (var emp in Model)
+    {
+
+
+        <tr>
+
+            <td>@emp.id</td>
+            <td>@emp.app_module</td>
+            <td>@emp.user_id</td>
+            <td>@emp.payload</td>
+            <td>@emp.error_message</td>
+            <td>@emp.created_date</td>
+
+
+
+        </tr>
+    }
+
+
+</table>
+

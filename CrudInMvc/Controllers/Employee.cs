@@ -24,7 +24,7 @@ namespace CrudInMvc.Controllers
             using (var conn = mvc.getOpenConection())
             {
                 
-                var sql = "SELECT * FROM org_member ";
+                var sql = "SELECT * FROM org_member_device ";
                 var result=await conn.QueryAsync(sql);
                 foreach(var item in result)
                 {
@@ -41,7 +41,69 @@ namespace CrudInMvc.Controllers
                 }
             }return View(list);
         }
-      
+     
+
+        public async Task<IActionResult> Diplay() {
+
+            MvcDataContext mvc = new MvcDataContext(_configuration);
+            List<ErrorLog> list = new List<ErrorLog>();
+            using (var conn = mvc.getOpenConection())
+            {
+
+                var sql = "SELECT * FROM error_log order by id desc ";
+                var result = await conn.QueryAsync(sql);
+                foreach (var item in result)
+                {
+                    var res = new ErrorLog
+                    {
+                        id = item.id,
+                        app_module = item.app_module,
+                        error_message = item.error_message,
+                        created_date = item.created_date
+
+
+                    }; list.Add(res);
+                }
+            }
+            return View(list);
+        }
+        [HttpGet]
+        public ViewResult Insert() {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Insert (ErrorLog es) {
+            var list = new List<ErrorLog>();
+            MvcDataContext mvc = new MvcDataContext(_configuration);
+            using (var conn = mvc.getOpenConection())
+            {
+
+                var sql = "Insert into error_log (app_module,error_message,created_date,payload_files,user_id) values (@app_module,@error_message,@created_date,@payload_files,@user_id) ";
+                var parameter = new DynamicParameters();
+                //parameter.Add("@id", es.id, System.Data.DbType.Int32);
+                parameter.Add("@user_id", es.user_id, System.Data.DbType.Int32);
+                parameter.Add("@app_module", es.app_module, System.Data.DbType.String);
+                parameter.Add("@payload_files", es.payload, System.Data.DbType.String);
+                parameter.Add("@error_message", es.error_message, System.Data.DbType.String);
+                parameter.Add("@created_date", DateTime.UtcNow, System.Data.DbType.DateTime);
+                var results= await conn.ExecuteAsync(sql, parameter);
+
+               
+
+                return RedirectToAction("Diplay");
+
+            }
+
+
+ 
+        }
+
+        [HttpGet]
+        public ViewResult Login() {
+            return View();
+                }
+
+
 
     }
 }
