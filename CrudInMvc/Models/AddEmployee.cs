@@ -2,12 +2,10 @@
 
 namespace CrudInMvc.Models
 {
-    public class AddEmployee
+    public class Login
     {
-        public List<EmployeeController> employeeControllers { get; set; }
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public long Phone { get; set; }
+        public string firstName { get; set; }
+       
+        public string password { get; set; }
     }
 }
