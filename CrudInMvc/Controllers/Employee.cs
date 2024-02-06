@@ -25,7 +25,7 @@ namespace CrudInMvc.Controllers
             using (var conn = mvc.getOpenConection())
             {
 
-                var sql = "SELECT * FROM org_member_device ";
+                var sql = "SELECT * FROM table name  ";
                 var result = await conn.QueryAsync(sql);
                 foreach (var item in result)
                 {
@@ -37,6 +37,7 @@ namespace CrudInMvc.Controllers
                         member_id = item.member_id,
                         is_active = item.is_active,
                         created_date = item.created_date
+                        //Your Logic
 
                     }; list.Add(res);
                 }
@@ -54,7 +55,7 @@ namespace CrudInMvc.Controllers
             using (var conn = mvc.getOpenConection())
             {
 
-                var sql = "SELECT * FROM error_log order by id desc ";
+                var sql = "SELECT * FROM tablename  order by id desc ";
                 var result = await conn.QueryAsync(sql);
                 foreach (var item in result)
                 {
@@ -84,7 +85,7 @@ namespace CrudInMvc.Controllers
             using (var conn = mvc.getOpenConection())
             {
 
-                var sql = "Insert into error_log (app_module,error_message,created_date,payload_files,user_id) values (@app_module,@error_message,@created_date,@payload_files,@user_id) ";
+                var sql = "Insert into table name  (app_module,error_message,created_date,payload_files,user_id) values (@app_module,@error_message,@created_date,@payload_files,@user_id) ";
                 var parameter = new DynamicParameters();
                 //parameter.Add("@id", es.id, System.Data.DbType.Int32);
                 parameter.Add("@user_id", es.user_id, System.Data.DbType.Int32);
@@ -125,7 +126,7 @@ namespace CrudInMvc.Controllers
                 var param = new DynamicParameters();
                 param.Add("@email", pa.firstName, System.Data.DbType.String);
 
-                var sql = "SELECT * FROM org_member WHERE EMAIL=@email";
+                var sql = "SELECT * FROM tablename  WHERE EMAIL=@email";
                 var result = await conn.QueryFirstOrDefaultAsync(sql, param);
                 if (result != null)
                 {
