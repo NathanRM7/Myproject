@@ -1565,11 +1565,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ramanathan\\OneDrive - Datanetiix Solutions Inc\\Desktop\\Projects\\CrudInMvc\\CrudInMvc\\CrudInMvc.csproj",
+      "projectUniqueName": "C:\\Users\\Ramanathan\\OneDrive - Datanetiix Solutions Inc\\Test\\MvcProject\\Projects\\CrudInMvc\\CrudInMvc\\CrudInMvc.csproj",
       "projectName": "CrudInMvc",
-      "projectPath": "C:\\Users\\Ramanathan\\OneDrive - Datanetiix Solutions Inc\\Desktop\\Projects\\CrudInMvc\\CrudInMvc\\CrudInMvc.csproj",
+      "projectPath": "C:\\Users\\Ramanathan\\OneDrive - Datanetiix Solutions Inc\\Test\\MvcProject\\Projects\\CrudInMvc\\CrudInMvc\\CrudInMvc.csproj",
       "packagesPath": "C:\\Users\\Ramanathan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ramanathan\\OneDrive - Datanetiix Solutions Inc\\Desktop\\Projects\\CrudInMvc\\CrudInMvc\\obj\\",
+      "outputPath": "C:\\Users\\Ramanathan\\OneDrive - Datanetiix Solutions Inc\\Test\\MvcProject\\Projects\\CrudInMvc\\CrudInMvc\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Ramanathan\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -72,8 +72,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 
     <style>
+        html {
+            margin: 0px;
+            height: 100%;
+            width: 100%;
+        }
         body {
             margin: auto;
             padding: 0;
@@ -86,7 +93,8 @@
         #parent {
             width: 100%;
             height: 100%;
-            background-image: url(https://static3.depositphotos.com/1002545/171/i/450/depositphotos_1712418-stock-photo-blue-abstract-background.jpg);
+            background-image: url(https://wallpapercave.com/wp/wp1973374.jpg);
+            
         }
 
         #child1 {
@@ -103,36 +111,57 @@
             width: 100%;
             display: flex;
             justify-content: space-evenly;
+          
         }
 
+           
         a {
             color: white;
-            font-size: x-large;
+            font-size: large;
+            cursor: pointer;
             text-decoration:none;
+            border-radius: 20px;
+            border: 2px solid #066bc6;
+            
+            
+        }
+        span{
+            
+            
+
+        
         }
 
         #child2 {
+          
             display: flex;
             justify-content: center;
             align-items: center;
             width: 100%;
-            height: 500px;
+            height: 675px;
+         
+        
         }
 
         #child3 {
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
             align-items: center;
             width: 100%;
-            height: 300px;
+          
+            background-color: #066bc6;
+            height:30px;
+            margin-bottom:0px;
         }
 
         #Login {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 100%;
-            height: 300px;
+            width: 700px;
+            height: 484px;
+           
+            color: white;
         }
 
         div {
@@ -140,13 +169,26 @@
         }
 
         input {
-            width: 607px;
-            height: 48px;
+            width: 295px;
+             height: 21px;
+            border-radius: 500px;
             color: black;
             font-size: 1rem;
             font-weight: 400;
             padding: 8px 14px;
         }
+        form{
+        background-color:snow;
+        align-items:center;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+         width: 484px;
+         border-radius:50px;
+
+        
+        }
+      
 
         #Signin {
             width: 100%;
@@ -165,8 +207,8 @@
             border-radius: 500px;
             text-align: center;
             align-items: center;
-            width: 607px;
-            height: 48px;
+            width: 301px;
+            height: 41px;
             text-decoration: none;
             text-transform: none;
         }
@@ -178,8 +220,17 @@
 
         h1 {
             color: #066bc6;
-            font-weight: 700
+            font-weight: 700;
+            border-bottom:2px solid black;
         }
+        
+        #child3 p{
+        color:white;
+        }
+
+       #error{
+          color :red; 
+       }
 
         #submit {
             background-color: #066bc6;
@@ -189,7 +240,16 @@
         }
 
         p {
-            color: brown;
+            color: #066bc6;
+            font-weight: 700;
+            cursor:pointer;
+
+          
+        }
+        p:hover{
+                color: brown;
+                font-size:larger;
+        
         }
     </style>
 </head>
@@ -200,7 +260,7 @@
         <div id="child1">
             <div id="navigation">
                 <img src="https://www.pngwing.com/public/css/pngwing.svg">
-                <span> <a class="navbar-brand" asp-area="" asp-controller="Employee" asp-action="Add">Member Device</a> </span>
+                <span> <a class="navbar-brand" asp-area="" asp-controller="Employee" asp-action="Add" id="a">Member Device</a> </span>
                 <span> <a class="navbar-brand" asp-area="" asp-controller="Employee" asp-action="Insert">Insert ErrorLog</a> </span>
 
                 <span> <a class="navbar-brand" asp-area="" asp-controller="Employee" asp-action="Diplay">Display Error Log</a></span>
@@ -215,19 +275,18 @@
                 <form method="post" action="Login" >
                     <h1>Login</h1>
 
-                    <label>Email</label>
                     <div>
                     </div>
-                    <input type="text" placeholder="Enter Your  Email" asp-for="firstName">
+                    <input type="text" placeholder="Enter Your  Email" asp-for="firstName" id="input1">
+                    <p id ="error"> </p>
                     <div></div>
-                    <label>Password</label>
-                    <div></div>
-                    <input type="password" placeholder="Enter Your Password" asp-for="password">
+                  
+                    <input type="password" placeholder="Enter Your Password" asp-for="password" >
                     <div></div>
                     <button id="submit"> Log in</button>
                     <div></div>
                     <p>Forgot Password ?</p>
-                    <div></div>
+                  
                     <p>Dont have An Account</p>
 
 
@@ -236,7 +295,7 @@
 
         </div>
 
-        <div id="child3">
+        @* <div id="child3">
             <div id="Signin">
 
                 <button id="google">
@@ -250,11 +309,25 @@
                 <button id="number">Continue With Number</button>
 
             </div>
+        </div> *@
+        <div id="child3">
+            <p>Location : Chennai ,Bangalore</p>
+            <p> Contact : 04322972 072963063 </p>
+            <p id="email"> Email : pngwave@email.com</p>
+
+        </div>
+        <div id="ep">
+
         </div>
 
-
     </div>
+   <script>
+       
+
+     
+   </script>
 
 
 </body>
+
 </html>

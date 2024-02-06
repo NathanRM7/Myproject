@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZmTAgb6IWwEEBNLrMKMKr74eF1KItQpXZyBUmlO3DL/WQbzOgW7lnWLJhyLdqG7YpkzkJN0pjIxxqvBlFAlszA==",
+  "dgSpecHash": "mns0xBkaTDftZSFyuwkR9YR9Men/UCv5L37xv6QL6Y+mS9f5H02Y0lfMi8yzwKFvLa8mJ+KFOriWu3jGjybBbA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ramanathan\\OneDrive - Datanetiix Solutions Inc\\Desktop\\Projects\\CrudInMvc\\CrudInMvc\\CrudInMvc.csproj",
+  "projectFilePath": "C:\\Users\\Ramanathan\\OneDrive - Datanetiix Solutions Inc\\Test\\MvcProject\\Projects\\CrudInMvc\\CrudInMvc\\CrudInMvc.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ramanathan\\.nuget\\packages\\dapper\\2.1.24\\dapper.2.1.24.nupkg.sha512",
     "C:\\Users\\Ramanathan\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",

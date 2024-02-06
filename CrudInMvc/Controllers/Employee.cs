@@ -45,6 +45,7 @@ namespace CrudInMvc.Controllers
         }
 
 
+
         public async Task<IActionResult> Diplay()
         {
 
@@ -114,18 +115,18 @@ namespace CrudInMvc.Controllers
             var pa = new Login()
             {
                 firstName = login.firstName,
-                password=login.password
+                password = login.password
             };
-          
+
             MvcDataContext mvc = new MvcDataContext(_configuration);
             List<ErrorLog> list = new List<ErrorLog>();
             using (var conn = mvc.getOpenConection())
             {
-                var param=new DynamicParameters();
+                var param = new DynamicParameters();
                 param.Add("@email", pa.firstName, System.Data.DbType.String);
 
                 var sql = "SELECT * FROM org_member WHERE EMAIL=@email";
-                var result = await conn.QueryFirstOrDefaultAsync(sql,param);
+                var result = await conn.QueryFirstOrDefaultAsync(sql, param);
                 if (result != null)
                 {
                     if (result.password == pa.password)
@@ -135,7 +136,8 @@ namespace CrudInMvc.Controllers
                     return RedirectToAction("Login");
 
                 }
-                else {
+                else
+                {
                     return RedirectToAction("Login");
                 }
 
@@ -144,5 +146,36 @@ namespace CrudInMvc.Controllers
 
 
         }
+        [HttpPost]
+        public async Task<dynamic> GetDetails( string email)
+        {
+            try
+            {
+                MvcDataContext mvc = new MvcDataContext(_configuration);
+                var dummy = new  { email = "invalid",password="invalid" };
+                using (var conn = mvc.getOpenConection())
+                {
+                    var parameters = new DynamicParameters();
+                    parameters.Add("@email", email, System.Data.DbType.String);
+
+
+                    var sql = "SELECT * FROM org_member  where email =@email";
+                    var result = await conn.QueryFirstOrDefaultAsync(sql, parameters);
+                    if (result == null) {
+                       
+                        return new JsonResult(dummy);
+                     
+                    }
+                    
+                    return new JsonResult(result);
+                 }
+            }
+            catch {
+                throw;
+            }
+
+        }
+
+        
     }
 }
